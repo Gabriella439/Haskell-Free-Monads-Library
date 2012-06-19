@@ -6,10 +6,7 @@
     transformer.
 
     To solve this, this module provides 'FreeT', which properly generalizes the
-    free monad to a free monad transformer, which is correct by construction.
-    In the same way that all monads can be generalized to a free monad plus an
-    interpreter, all monad transformers can be generalized to a free monad
-    transformer plus an interpreter.
+    free monad to a free monad transformer which is correct by construction.
 
     The 'FreeT' type commonly arises in coroutine and iteratee libraries that
     wish to provide a monad transformer that correctly obeys the monad
@@ -57,8 +54,8 @@ import Data.Functor.Identity
 data FreeF f r x = Return r | Wrap (f x)
 
 {-|
-    A free monad transformer alternates nesting the base functor @f@ and the
-    base monad @m@.
+    A free monad transformer alternates nesting the base monad @m@ and the base
+    functor @f@.
 
     * @f@ - The functor that generates the free monad transformer
 

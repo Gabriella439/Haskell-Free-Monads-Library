@@ -42,5 +42,5 @@ Library
         Control.IMonad.Trans.Free,
         Control.Monad.Free,
         Control.Monad.Trans.Free
-    GHC-Options: -O
+    GHC-Options: -O2
     Default-Language: Haskell2010
