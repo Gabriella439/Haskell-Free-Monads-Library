@@ -54,11 +54,7 @@ import Data.Functor.Identity
 -}
 
 -- | The signature for 'Free'
-data FreeF f r x
-  -- | 'Return' behaves like @[]@ by not using the functor at all
-  = Return r
-  -- | 'Wrap' behaves lke (@:@) by prepending another layer of the functor
-  | Wrap (f x)
+data FreeF f r x = Return r | Wrap (f x)
 
 {-|
     A free monad transformer alternates nesting the base functor @f@ and the
