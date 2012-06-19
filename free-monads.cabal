@@ -1,0 +1,45 @@
+Name: free-monads
+Version: 1.0.0
+Cabal-Version: >=1.14.0
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Copyright: 2012 Gabriel Gonzalez
+Author: Gabriel Gonzalez
+Maintainer: Gabriel439@gmail.com
+Stability: Experimental
+Bug-Reports: mailto:Gabriel439@gmail.com
+Synopsis: Free monads
+Description:
+  This library implements free monads and several variations thereof.
+  @Control.Monad.Free@ provides the simplest implementation and makes a great
+  teaching example.
+  .
+  Unlike other packages, this one implements free monads without using
+  type-classes.  Type-class-based approaches cause issues when declaring
+  functors with multiple terms because the type-checker will often refuse to
+  type-check valid functions even when given the correct type signature.  Rather
+  than using type-classes, this package instead separates each implementation
+  into its own namespace by providing them in distinct modules.  To choose the
+  desired implementation, just import the appropriate module.
+  .
+  This library also separates the monad transformer approaches from the
+  ordinary monad approaches since the monad transformer version complicates the
+  API and presentation considerably.  However, the monad transformer version
+  still provides a type synonym for the ordinary monad by transforming the
+  @Identity@ monad for users who wish to unify the two approaches in their code
+  at the expense of more complicated code.
+Category: Control
+Tested-With: GHC ==7.4.1
+Source-Repository head
+    Type: git
+    Location: https://github.com/Gabriel439/Haskell-Free-Monads-Library
+
+Library
+    Build-Depends: base >= 4 && < 5, index-core, transformers
+    Exposed-Modules:
+        Control.IMonad.Free,
+        Control.Monad.Free,
+        Control.Monad.Trans.Free
+    GHC-Options: -O
+    Default-Language: Haskell2010
